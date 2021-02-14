@@ -9,4 +9,4 @@ zip -r site.zip *
 az webapp deployment source config-zip \
     --src site.zip \
     --resource-group mslearn-azurewebapp \
-    --name rht-azurewebapp
+    --name rht-azurewebapp-net50
