@@ -2,7 +2,11 @@ wget -q -O - https://dot.net/v1/dotnet-install.sh | bash -s -- --version 5.0.103
 export PATH="~/.dotnet:$PATH"
 echo "export PATH=~/.dotnet:\$PATH" >> ~/.bashrc
 
+dotnet publish -o pub
+cd pub
+zip -r site.zip *
+
 az webapp deployment source config-zip \
     --src site.zip \
     --resource-group mslearn-azurewebapp \
-    --name mslearn-azurewebapp
+    --name rht-azurewebapp
